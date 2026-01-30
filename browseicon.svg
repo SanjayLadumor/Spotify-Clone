@@ -1,0 +1,10 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="background-color: rgb(40,39,39);">
+  <rect width="48" height="48" fill="rgb(40,39,39)" rx="12"/>
+  <rect x="12" y="21" width="24" height="14" rx="2" stroke="grey" stroke-width="2.5" fill="none"/>
+  <rect x="17" y="14" width="14" height="4" rx="1.5" stroke="grey" stroke-width="2.5" fill="none"/>
+  <ellipse cx="24" cy="28" rx="3" ry="2.3" fill="none" stroke="grey" stroke-width="2.5"/>
+</svg>
+
+
+
+

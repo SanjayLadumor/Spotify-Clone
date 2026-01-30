@@ -1,0 +1,14 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgb(33,33,33)" />
+      <stop offset="100%" stop-color="rgb(18,18,18)" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" fill="url(#bgGradient)" />
+  <!-- White surrounding circle -->
+  <circle cx="32" cy="32" r="28" fill="#fff" />
+  <!-- Black play triangle -->
+  <polygon points="24,16 48,32 24,48" fill="#000" />
+</svg>
+

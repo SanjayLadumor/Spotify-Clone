@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Spotify - Web Player: Music for Everyone</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <a href="https://open.spotify.com/" style="text-decoration: none;">
+            <div class="logo">
+                <img src="spotifylogo.svg" class="soptify_logo" style="width: 36px;height: 36px;">
+                <!-- <span class="texthie">Spotify</span> -->
+            </div>
+        </a>
+        <div class="homeicon">
+            <img src="homeicon.svg" class="home_icon" style="width: 40px;height: 40px;">
+        </div>
+        <div class="searchbar">
+            <input id="search_bar" type="search" placeholder=" What do you want to play?">
+            <img src="magnifyingglass.svg" class="magnifying_glass" height="32px" width="32px" title="Search">
+            <img src="browseicon.svg" class="browse_icon" height="32px" width="32px" title="Browse">
+        </div>
+        <div class="Premium">Premium</div>
+        <div class="Support">Support</div>
+        <div class="Download">Download</div>
+        <div class="line">|</div>
+        <div class="install">
+            <img src="downloadicon.svg" height="17px" width="15px" class="downlaodiconsvg">
+            Install App
+        </div>
+        <div class="Signup">
+            Sign up
+        </div>
+        <div class="Login">
+            <button class="Loginbutton">
+                Log in
+            </button>
+        </div>
+        <div class="openapp">
+            <a href="https://open.spotify.com/">
+                <button style="border-radius: 20px;height: 30px;">Open App</button>
+            </a>
+            <img class="hamburger" src="hamburger.svg">
+        </div>
+    </nav>
+    <div class="boxes">
+        <div class="box1">
+            <div class="yourlib">Your Library</div>
+            <div class="bubbles">
+                <div class="bubble1">
+                    <div class="text1">
+                        Create your first playlist
+                    </div>
+                    <div class="text2">
+                        It's easy,we'll help you
+                    </div>
+                    <button class="createplay" onclick="alert('This is just a Beta Version')">
+                        Create playlist
+                    </button>
+                </div>
+                <div class="bubble1">
+                    <div class="text1">
+                        Let's find some podcasts to follow
+                    </div>
+                    <div class="text2">
+                        We'll keep you updated on new episodes
+                    </div>
+                    <button class="createplay" onclick="alert('This is just a Beta Version')">
+                        Browse podcasts
+                    </button>
+                </div>
+            </div>
+            <footer>
+                <div class="legal">Legal</div>
+                <div class="Safety">Safety & Privacy Center</div>
+                <div class="privacy">Privacy & Policy</div>
+                <div class="cookies">Cookies</div>
+            </footer>
+            <footer class="newfooter">
+                <div class="ads">About ads</div>
+                <div class="accessibility">Accessibility</div>
+            </footer>
+            <div class="cookies2">
+                Cookies
+            </div>
+            <div class="engbtn">
+                <button class="englishbtn">
+                    <img src="worldglobe.svg" height="18px" width="18px">
+                    English
+                </button>
+            </div>
+        </div>
+
+
+        <div class="box2">
+            <h2>Trending songs</h2>
+            <div class="songslist">
+
+                <!-- ALBUM 1 -->
+
+                <div class="alb1">
+                    <img src="greenplayicon.svg" height="45px" width="45px" class="greenplayiconn">
+                    <div class="imgbox">
+                        <img class="albumimg" src="khat.jpg">
+                    </div>
+                    <div class="albtext1 album1song">
+                        Khat
+                    </div>
+                    <div class="albtext2">
+                        Navjot Ahuja
+                    </div>
+                </div>
+
+                <!-- ALBUM 2 -->
+
+                <div class="alb1">
+                    <img src="greenplayicon.svg" height="45px" width="45px" class="greenplayiconn">
+                    <div class="imgbox">
+                        <img class="albumimg" src="not guilty.jpg">
+                    </div>
+                    <div class="albtext1">
+                        Not guilty
+                    </div>
+                    <div class="albtext2">
+                        Dhanda Nyoliwala
+                    </div>
+                </div>
+
+                <!-- ALBUM 3 -->
+
+                <div class="alb1">
+                    <img src="greenplayicon.svg" height="45px" width="45px" class="greenplayiconn">
+                    <div class="imgbox">
+                        <img class="albumimg" src="23 theme.jpg">
+                    </div>
+                    <div class="albtext1">
+                        23 Theme(From "AA23")
+                    </div>
+                    <div class="albtext2">
+                        Anirudh Ravichander,..
+                    </div>
+                </div>
+
+                <!-- ALBUM 4 -->
+
+                <div class="alb1">
+                    <img src="greenplayicon.svg" height="45px" width="45px" class="greenplayiconn">
+                    <div class="imgbox">
+                        <img class="albumimg" src="samjhawan.webp">
+                    </div>
+                    <div class="albtext1">
+                        Samjhawan
+                    </div>
+                    <div class="albtext2">
+                        Jawab Ahmad,Shaarib Toshi,Arjit Singh,..
+                    </div>
+                </div>
+
+                <!-- ALBUM 5 -->
+
+                <div class="alb1">
+                    <img src="greenplayicon.svg" height="45px" width="45px" class="greenplayiconn">
+                    <div class="imgbox">
+                        <img class="albumimg" src="udaarian.jpg">
+                    </div>
+                    <div class="albtext1">
+                        Udaarian
+                    </div>
+                    <div class="albtext2">
+                        Satinder Sartaaj
+                    </div>
+                </div>
+
+                <!-- ALBUM 6 -->
+
+                <div class="alb1">
+                    <img src="greenplayicon.svg" height="45px" width="45px" class="greenplayiconn">
+                    <div class="imgbox">
+                        <img class="albumimg" src="ishq da chehra.jpg">
+                    </div>
+                    <div class="albtext1">
+                        Ishq Da Chehra(From "BORDER 2")
+                    </div>
+                    <div class="albtext2">
+                        Diljit Dosanjh,Sachet Tandon,Parampara..
+                    </div>
+                </div>
+
+                <!-- ALBUM 7 -->
+
+                <div class="alb1">
+                    <img src="greenplayicon.svg" height="45px" width="45px" class="greenplayiconn">
+                    <div class="imgbox">
+                        <img class="albumimg" src="sheesha.jpg">
+                    </div>
+                    <div class="albtext1">
+                        Sheesha
+                    </div>
+                    <div class="albtext2">
+                        Mitta Ror,Swara Verma
+                    </div>
+                </div>
+
+                <!-- ALBUM 8 -->
+
+                <div class="alb1">
+                    <img src="greenplayicon.svg" height="45px" width="45px" class="greenplayiconn">
+                    <div class="imgbox">
+                        <img class="albumimg" src="papaotai.jpg">
+                    </div>
+                    <div class="albtext1">
+                        IPapaoutai - Afro Song
+                    </div>
+                    <div class="albtext2">
+                        mikeeysmind, Chill77, Unjaps
+                    </div>
+                </div>
+
+                <!-- ALBUM 9 -->
+
+                <div class="alb1">
+                    <img src="greenplayicon.svg" height="45px" width="45px" class="greenplayiconn">
+                    <div class="imgbox">
+                        <img class="albumimg" src="ghar kab aaoge.jpg">
+                    </div>
+                    <div class="albtext1">
+                        Ghar Kab Aaoge
+                    </div>
+                    <div class="albtext2">
+                        Anu Malik,Mithoon,Sonu Nigam,Arijit Singh
+                    </div>
+                </div>
+
+                <!-- ALBUM 10 -->
+
+                <div class="alb1">
+                    <img src="greenplayicon.svg" height="45px" width="45px" class="greenplayiconn">
+                    <div class="imgbox">
+                        <img class="albumimg" src="get at me.jpg">
+                    </div>
+                    <div class="albtext1">
+                        Get At Me
+                    </div>
+                    <div class="albtext2">
+                        Prem Dhillon, The Kidd,Flex Singh
+                    </div>
+                </div>
+
+                <!-- ALBUM 11 -->
+
+                <div class="alb1">
+                    <img src="greenplayicon.svg" height="45px" width="45px" class="greenplayiconn">
+                    <div class="imgbox">
+                        <img class="albumimg" src="banda kaam ka.webp">
+                    </div>
+                    <div class="albtext1">
+                        IBanda Kaam Ka
+                    </div>
+                    <div class="albtext2">
+                        Chaar Diwaari, Sanjith Hegde
+                    </div>
+                </div>
+
+            </div>
+            <div class="songlib">
+                <h2 class="heading2">Library</h2>
+                <div class="lib1">
+                    <ul>
+                        <!-- <div class="song1here">
+                            <div class="songname">
+                                Chemtrails over the country side
+                            </div>
+                            <img src="greenplayicon.svg" height="45px" width="45px" class="playhere">
+                            <img class="songposter src="ordiary.jpg" height="150px" width="140px" style="padding: 10px;border-radius: 10px;">
+                            <div class="artistname">
+                                Lana dey rey
+                            </div>
+                        </div> -->
+                    </ul>
+                    <ul>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="artistlist">
+                <h2>Popular Artists</h2>
+                <div class="allartist">
+                    <!-- Artist 1 -->
+                    <div class="artist1">
+                        <div class="artistimgbox">
+                            <img src="pritam.jpg">
+                        </div>
+                        <div class="greenplayiconhere">
+                            <img src="greenplayicon.svg">
+                        </div>
+                        <div class="artistname">
+                            Pritam
+                        </div>
+                        <div class="artistwritten">
+                            Artist
+                        </div>
+                    </div>
+                    <!-- Artist 2 -->
+                    <div class="artist1">
+                        <div class="artistimgbox">
+                            <img src="ar rahman.jpg">
+                        </div>
+                        <div class="greenplayiconhere">
+                            <img src="greenplayicon.svg">
+                        </div>
+                        <div class="artistname">
+                            A.R Rahman
+                        </div>
+                        <div class="artistwritten">
+                            Artist
+                        </div>
+                    </div>
+                    <!-- Artist 3 -->
+                    <div class="artist1">
+                        <div class="artistimgbox">
+                            <img src="arijit singh.jpg">
+                        </div>
+                        <div class="greenplayiconhere">
+                            <img src="greenplayicon.svg">
+                        </div>
+                        <div class="artistname">
+                            Arijit Singh
+                        </div>
+                        <div class="artistwritten">
+                            Artist
+                        </div>
+                    </div>
+                    <!-- Artist 4 -->
+                    <div class="artist1">
+                        <div class="artistimgbox">
+                            <img src="sachin jigar.jpg">
+                        </div>
+                        <div class="greenplayiconhere">
+                            <img src="greenplayicon.svg">
+                        </div>
+                        <div class="artistname">
+                            Sachin-Jigar
+                        </div>
+                        <div class="artistwritten">
+                            Artist
+                        </div>
+                    </div>
+                    <!-- Artist 5 -->
+                    <div class="artist1">
+                        <div class="artistimgbox">
+                            <img src="vishal shrkhar.jpg">
+                        </div>
+                        <div class="greenplayiconhere">
+                            <img src="greenplayicon.svg">
+                        </div>
+                        <div class="artistname">
+                            Vishal-Shekhar
+                        </div>
+                        <div class="artistwritten">
+                            Artist
+                        </div>
+                    </div>
+                    <!-- Artist 6 -->
+                    <div class="artist1">
+                        <div class="artistimgbox">
+                            <img src="atif aslam.jpg">
+                        </div>
+                        <div class="greenplayiconhere">
+                            <img src="greenplayicon.svg">
+                        </div>
+                        <div class="artistname">
+                            Atif Aslam
+                        </div>
+                        <div class="artistwritten">
+                            Artist
+                        </div>
+                    </div>
+                    <!-- Artist 7 -->
+                    <div class="artist1">
+                        <div class="artistimgbox">
+                            <img src="anirudh ravichander.jpg">
+                        </div>
+                        <div class="greenplayiconhere">
+                            <img src="greenplayicon.svg">
+                        </div>
+                        <div class="artistname">
+                            Anirudh Ravichander
+                        </div>
+                        <div class="artistwritten">
+                            Artist
+                        </div>
+                    </div>
+                    <!-- Artist 8 -->
+                    <div class="artist1">
+                        <div class="artistimgbox">
+                            <img src="udit narayan.jpg">
+                        </div>
+                        <div class="greenplayiconhere">
+                            <img src="greenplayicon.svg">
+                        </div>
+                        <div class="artistname">
+                            Udit Narayan
+                        </div>
+                        <div class="artistwritten">
+                            Artist
+                        </div>
+                    </div>
+                    <!-- Artist 9 -->
+                    <div class="artist1">
+                        <div class="artistimgbox">
+                            <img src="yo yo honey singh.jpg">
+                        </div>
+                        <div class="greenplayiconhere">
+                            <img src="greenplayicon.svg">
+                        </div>
+                        <div class="artistname">
+                            Yo Yo Honey Singh
+                        </div>
+                        <div class="artistwritten">
+                            Artist
+                        </div>
+                    </div>
+                    <!-- Artist 10 -->
+                    <div class="artist1">
+                        <div class="artistimgbox">
+                            <img src="Shankar-Ehsaan-Loy.jpg">
+                        </div>
+                        <div class="greenplayiconhere">
+                            <img src="greenplayicon.svg">
+                        </div>
+                        <div class="artistname">
+                            Shankar-Ehsaan-Loy
+                        </div>
+                        <div class="artistwritten">
+                            Artist
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <span class="line"></span>
+            <br>
+            <br>
+            <br>
+            <!-- Footer Here -->
+            <div class="box2footer">
+                <!-- Box 1 -->
+                <div class="footerbox1">
+                    <h4>Company</h4>
+                    <div class="sub1 sub">
+                        About
+                    </div>
+                    <div class="sub2 sub">
+                        Jobs
+                    </div>
+                    <div class="sub3 sub">
+                        For the Record
+                    </div>
+                </div>
+                <!-- Box 2 -->
+                <div class="footerbox1">
+                    <h4>Communities</h4>
+                    <div class="sub1 sub">
+                        For Artists
+                    </div>
+                    <div class="sub2 sub">
+                        Developers
+                    </div>
+                    <div class="sub3 sub">
+                        Advertising
+                    </div>
+                    <div class="sub4 sub">
+                        Investors
+                    </div>
+                    <div class="sub5 sub">
+                        Vendors
+                    </div>
+                </div>
+                <!-- Box 3 -->
+                <div class="footerbox1">
+                    <h4>Useful Links</h4>
+                    <div class="sub1 sub">
+                        Support
+                    </div>
+                    <div class="sub2 sub">
+                        Free Mobile App
+                    </div>
+                    <div class="sub3 sub">
+                        Popular by Country
+                    </div>
+                    <div class="sub4 sub">
+                        Import your music
+                    </div>
+                </div>
+                <!-- Box 4 -->
+                <div class="footerbox1">
+                    <h4>Spotify Plans</h4>
+                    <div class="sub1 sub">
+                        Premium Lite
+                    </div>
+                    <div class="sub2 sub">
+                        Premium Standard
+                    </div>
+                    <div class="sub3 sub">
+                        Premium Platinum
+                    </div>
+                    <div class="sub4 sub">
+                        Premium Student
+                    </div>
+                    <div class="sub5 sub">
+                        Spotify Free
+                    </div>
+                </div>
+                <!-- Logos -->
+                <div class="alllogo">
+                    <div class="alllogos1">
+                        <img src="instagramlogo.svg" height="40px" width="40px" style="cursor: pointer;">
+                    </div>
+                    <div class="alllogos2">
+                        <img src="twitterlogo.svg" height="30px" width="30px" style="cursor: pointer;">
+                    </div>
+                    <div class="alllogos3">
+                        <img src="facebooklogo.svg" height="30px" width="30px" style="cursor: pointer;">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <span class="line"></span>
+            <br>
+            <br>
+            <br>
+            <div class="lasttext" style="padding-left: 40px;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color: gray;font-size: 15px;">
+                &copy; Spotify by Sanjay 
+            </div>
+            <br>
+            <br>
+            <br>
+        </div>
+
+
+    </div>
+    <footer class="endingfooter">
+
+        <div class="seekbar">
+            <div class="musicflex">
+                <div class="songinfo"></div>
+                <div class="songbtns">
+                    <img id="previous" class="previous" src="previous.svg" height="25px" width="25px">
+                    <img id="play" class="pauseplay" src="pausebtn.svg" height="25px" width="25px">
+                    <img id="next" class="next" src="next.svg" height="25px" width="25px">
+                </div>
+                <div class="timevol">
+                    <div class="volume">
+                        <img src="volumeon.svg" height="25px" width="25px">
+                        <div class="range">
+                            <input type="range" name="volume" style="width: 90px;color: grey;">
+                        </div>
+                    </div>
+                    <div class="songtime"></div>
+                </div>
+            </div>
+
+            <div class="seekline">
+                <div class="circle"></div>
+            </div>
+        </div>
+
+    </footer>
+
+    <div class="footernav">
+        <div class="homedraw" onclick="alert('Not Deployed Yet!!')">
+            <img src="mobhome.svg" height="25px" width="25px">
+            Home
+        </div>
+        <div class="mobsearch" onclick="alert('Not Deployed Yet!!')">
+            <img src="mobsearch.svg" height="25px" width="25px">
+            Search
+        </div>
+        <div class="mobliv" onclick="alert('Not Deployed Yet!!')">
+            <img src="library.svg" height="25px" width="25px">
+            Library
+        </div>
+        <div class="moblogo" onclick="alert('Not Deployed Yet!!')">
+            <img src="mobspotify.svg" height="25px" width="25px">
+            Premium
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

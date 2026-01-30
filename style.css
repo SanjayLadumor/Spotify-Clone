@@ -1,0 +1,982 @@
+body {
+    background-color: black;
+    color: white;
+    margin: 0px;
+    cursor: default;
+}
+
+nav {
+    display: flex;
+    margin-left: 10px;
+    flex-direction: row;
+    align-items: center;
+}
+
+nav .logo {
+    padding: 5px;
+    /* padding-left: 15px; */
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+nav .openapp {
+    display: none;
+}
+
+/* nav .logo .texthie{
+    display: none;
+    color: white;
+} */
+
+/* nav .logo img {
+    height: 36px;
+    width: 36px;
+} */
+
+/* nav .homeicon .home_icon .img {
+    height: 36px;
+    width: 36px;
+} */
+
+nav .searchbar {
+    position: relative;
+}
+
+nav .homeicon {
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    padding-left: 25px;
+    /* cursor: pointer; */
+}
+
+nav .homeicon img:hover {}
+
+nav .searchbar input[type="search"] {
+    height: 45px;
+    background-color: rgb(40, 39, 39);
+    color: rgb(255, 255, 255);
+    border: none;
+    width: fit-content;
+    border-radius: 35px;
+    width: 480px;
+    padding-left: 40px;
+    padding-right: 40px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+nav .searchbar .magnifying_glass {
+    position: absolute;
+    left: 5px;
+    align-self: center;
+}
+
+nav .searchbar .browse_icon {
+    position: absolute;
+    align-self: center;
+    right: 8px;
+}
+
+nav .Premium {
+    padding-left: 80px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: medium;
+    color: rgb(142, 141, 141);
+    font-weight: bold;
+}
+
+nav .Premium:hover {
+    color: rgb(237, 236, 236);
+    cursor: pointer;
+}
+
+nav .Support {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: medium;
+    padding: 10px;
+    color: rgb(142, 141, 141);
+    font-weight: bold;
+}
+
+nav .Support:hover {
+    color: rgb(237, 236, 236);
+    cursor: pointer;
+}
+
+nav .Download {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: medium;
+    padding-right: 30px;
+    color: rgb(142, 141, 141);
+    font-weight: bold;
+}
+
+nav .Download:hover {
+    color: rgb(237, 236, 236);
+    cursor: pointer;
+}
+
+nav .line {
+    padding-right: 30px;
+}
+
+nav .install {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(142, 141, 141);
+    padding-right: 30px;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+nav .install:hover {
+    color: rgb(237, 236, 236);
+    cursor: pointer;
+}
+
+nav .install .downlaodiconsvg {
+    padding-right: 8px;
+}
+
+nav .Signup {
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(142, 141, 141);
+}
+
+nav .Signup:hover {
+    color: rgb(237, 236, 236);
+    cursor: pointer;
+}
+
+nav .Login {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+nav .Login .Loginbutton {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bolder;
+    height: 45px;
+    width: 100px;
+    border-radius: 40px;
+    border: none;
+}
+
+nav .Login .Loginbutton:hover {
+    background-color: rgb(210, 209, 209);
+    cursor: pointer;
+}
+
+.boxes {
+    display: flex;
+    padding: 8px;
+    gap: 8px;
+}
+
+.boxes .box1 {
+    display: flex;
+    flex-direction: column;
+    width: 33vw;
+    border-radius: 8px;
+    background-color: rgb(23, 22, 22);
+    height: 75vh;
+}
+
+.boxes .box1 .yourlib {
+    padding: 15px;
+    padding-top: 18px;
+    padding-bottom: 30px;
+    font-weight: bolder;
+    cursor: default;
+}
+
+.boxes .box2 {
+    width: 67vw;
+    border-radius: 8px;
+    height: 75vh;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.boxes .box1 .bubbles {
+    background-color: rgb(23, 22, 22);
+    height: 160px;
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    /* scrollbar-gutter: stable both-edges; */
+}
+
+/* .boxes .box1 .bubbles::-webkit-scrollbar {
+    position: absolute;
+    width: 0px;
+} */
+
+.boxes .box1 .bubbles .bubble1 {
+    margin: 10px;
+    background-color: rgb(33, 32, 32);
+    border-radius: 5px;
+    padding-top: 19px;
+    padding-right: 18px;
+    padding-left: 18px;
+    padding-bottom: 15px;
+    /* cursor: pointer; */
+}
+
+.boxes .box1 .bubbles .bubble1 .text1 {
+    padding-bottom: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bolder;
+}
+
+.boxes .box1 .bubbles .bubble1 .text2 {
+    padding-bottom: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 13px;
+}
+
+.boxes .box1 .bubbles .bubble1 .createplay {
+    border-radius: 20px;
+    height: 32px;
+    width: 120px;
+    border: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.boxes .box1 footer {
+    background-color: rgb(23, 22, 22) !important;
+    background-image: none !important;
+    /* This removes the gradient */
+    padding: 20px;
+    padding-bottom: 15px;
+    display: flex;
+    padding-top: 55px;
+    padding-right: 37px;
+    font-size: 12px;
+    gap: 20px;
+    color: rgb(138, 138, 138);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.boxes .box1 footer .legal {
+    cursor: pointer;
+}
+
+.boxes .box1 footer .Safety {
+    cursor: pointer;
+}
+
+.boxes .box1 footer .privacy {
+    cursor: pointer;
+}
+
+.boxes .box1 footer .cookies {
+    cursor: pointer;
+}
+
+.boxes .box1 .newfooter .ads {
+    cursor: pointer;
+}
+
+.boxes .box1 .newfooter .accessibility {
+    cursor: pointer;
+}
+
+.boxes .box1 .cookies2 {
+    cursor: pointer;
+}
+
+.boxes .box1 .newfooter {
+    background-color: rgb(23, 22, 22) !important;
+    background-image: none !important;
+    /* This removes the gradient */
+    padding-left: 20px;
+    padding-right: 37px;
+    padding-top: 0px;
+    font-size: 12px;
+    gap: 20px;
+    color: rgb(138, 138, 138);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.boxes .box1 .cookies2 {
+    padding-left: 20px;
+    font-size: 13px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(138, 138, 138);
+}
+
+.boxes .box1 .engbtn {
+    /* background-color: black; */
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.boxes .box1 .engbtn button {
+    background-color: rgb(23, 22, 22);
+    border-width: 1px;
+    border-color: white;
+    color: white;
+    width: 100px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxes .box2 {
+    background: linear-gradient(to bottom, rgb(33, 33, 33), rgb(18, 18, 18));
+}
+
+.boxes .box2 h2 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding-left: 40px;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.boxes .box2 h2:hover {
+    text-decoration: underline;
+}
+
+.boxes .box2 .songslist {
+    /* overflow: hidden; */
+    scroll-snap-type: proximity;
+    overflow-y: hidden;
+    padding-left: 40px;
+    display: flex;
+    position: relative;
+    transition: all 2s;
+}
+
+.boxes .box2 .songslist .alb1:hover {
+    background-color: rgb(53, 50, 50);
+    cursor: pointer;
+
+    .greenplayiconn {
+        opacity: 1;
+        transition: 0.5s ease-in-out;
+        top: 110px;
+    }
+}
+
+.boxes .box2 .songslist .alb1 {
+    width: min-content;
+    border-radius: 10px;
+    position: relative;
+}
+
+.boxes .box2 .songslist .alb1 .imgbox {
+    height: 150px;
+    width: 140px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.boxes .box2 .songslist .alb1 .albumimg {
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+}
+
+.boxes .box2 .songslist .alb1 .greenplayiconn {
+    position: absolute;
+    top: 160px;
+    right: 12px;
+    opacity: 0;
+    /* transition: 1s ease-in-out; */
+}
+
+.boxes .box2 .songslist .alb1 .albtext1 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 15px;
+}
+
+.boxes .box2 .songslist .alb1 .albtext2 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    font-weight: lighter;
+    font-size: 12px;
+    color: grey;
+    padding-bottom: 5px;
+}
+
+.boxes .box2 .songlib {
+    padding-left: 40px;
+    padding-top: 10px;
+    /* overflow-x: scroll; */
+}
+
+.boxes .box2 .songlib .heading2 {
+    padding-left: 0px;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.boxes .box2 .songlib .lib1 {
+    /* display: flex; */
+    overflow: scroll;
+}
+
+.boxes .box2 .songlib .lib1 {
+    /* display: flex; */
+    /* width: min-content;
+    border-radius: 10px;
+    position: relative; */
+}
+
+.boxes .box2 .songlib .lib1 ul {
+    display: flex;
+}
+
+.boxes .box2 .songlib .lib1 .song1here {
+    width: min-content;
+    border-radius: 10px;
+    /* position: relative; */
+}
+
+.boxes .box2 .songlib .lib1 .song1here .songname {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 15px;
+}
+
+.boxes .box2 .songlib .lib1 .song1here .artistname {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    font-weight: lighter;
+    font-size: 12px;
+    color: grey;
+    padding-bottom: 5px;
+}
+
+.boxes .box2 .songlib .lib1 .song1here .playhere {
+    position: relative;
+    top: 210px;
+    right: 660px;
+    left: 100px;
+    opacity: 0;
+    /* transition: 1s ease-in-out; */
+}
+
+.boxes .box2 .songlib .lib1 .song1here:hover {
+    background-color: rgb(53, 50, 50);
+    cursor: pointer;
+
+    .playhere {
+        opacity: 1;
+        transition: 0.5s ease-out;
+        top: 160px;
+    }
+
+
+}
+
+.boxes .box2 .songlib .lib1 ul {
+    padding-left: 0px;
+}
+
+.boxes .box2 .songlib .lib1 ul ol {
+    padding-left: 0px;
+}
+
+.boxes .box2 .artistlist .allartist {
+    padding-left: 40px;
+    display: flex;
+    overflow-x: scroll;
+    padding-bottom: 20px;
+}
+
+.boxes .box2 .artistlist .allartist .artist1:hover {
+    background-color: rgb(53, 50, 50);
+    cursor: pointer;
+
+    .greenplayiconhere {
+        opacity: 1;
+    }
+}
+
+.boxes .box2 .artistlist .allartist .artist1 {
+    width: min-content;
+    border-radius: 10px;
+    position: relative;
+}
+
+.boxes .box2 .artistlist .allartist .artist1 .artistimgbox {
+    height: 150px;
+    width: 140px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.boxes .box2 .artistlist .allartist .artist1 .artistimgbox img {
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 150px;
+}
+
+.boxes .box2 .artistlist .allartist .artist1 .greenplayiconhere {
+    position: absolute;
+    top: 105px;
+    right: 10px;
+    opacity: 0;
+    height: 50px;
+    width: 50px;
+}
+
+.boxes .box2 .artistlist .allartist .artist1 .greenplayiconhere img {
+    height: 50px;
+    width: 50px;
+}
+
+.boxes .box2 .artistlist .allartist .artist1 .artistname {
+    padding-left: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 15px;
+}
+
+.boxes .box2 .artistlist .allartist .artist1 .artistwritten {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    font-weight: lighter;
+    font-size: 12px;
+    color: grey;
+    padding-bottom: 5px;
+}
+
+.boxes .box2 .line {
+    display: flex;
+    flex-grow: 1;
+    height: 1px;
+    background: linear-gradient(to right,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent);
+}
+
+.boxes .box2 .box2footer {
+    display: flex;
+    padding-left: 40px;
+    gap: 30px;
+}
+
+.boxes .box2 .box2footer .footerbox1 {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.boxes .box2 .box2footer .footerbox1 h4 {
+    margin-bottom: 5px;
+}
+
+.boxes .box2 .box2footer .footerbox1 .sub {
+    font-size: 15px;
+    color: rgb(171, 161, 161);
+    cursor: pointer;
+}
+
+.boxes .box2 .box2footer .alllogo {
+    justify-content: end;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* THIS IS SEEKBAR */
+
+footer {
+    /* display: flex; */
+    background: linear-gradient(to bottom, rgb(33, 33, 33), rgb(18, 18, 18));
+    padding: 3px;
+    position: sticky;
+}
+
+footer .seekbar {
+    /* justify-items: center; */
+    padding-top: 5px;
+}
+
+footer .seekbar .seekline {
+    background-color: darkgray;
+    width: 98vw;
+    height: 5px;
+    border-radius: 5px;
+    position: relative;
+    /* margin: 20px auto; */
+    cursor: pointer;
+}
+
+footer .seekbar .circle {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background-color: whitesmoke;
+    position: absolute;
+    /* This centers the circle vertically on the line */
+    top: 50%;
+    left: 0%;
+    /* -50% X: keeps the CENTER of circle on the line's end */
+    /* -50% Y: keeps circle from floating above the line */
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    pointer-events: none;
+    /* Allows clicks to pass through to the seekline */
+}
+
+footer .seekbar .musicflex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .seekbar .musicflex .songinfo {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+footer .musicflex .songbtns .previous {
+    cursor: pointer;
+}
+
+footer .musicflex .songbtns .pauseplay {
+    cursor: pointer;
+}
+
+footer .musicflex .songbtns .nest {
+    cursor: pointer;
+}
+
+footer .seekbar .musicflex .songinfo {
+    width: 220px;
+}
+
+.seekbar .musicflex .timevol {
+    display: flex;
+    align-items: center;
+}
+
+.seekbar .musicflex .timevol .volume {
+    display: flex;
+    align-items: center;
+}
+
+.footernav {
+    display: none;
+}
+
+/* SCROLL BAR  */
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #222;
+    /* Track color */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #444;
+    /* Thumb color */
+    border-radius: 6px;
+    border: 2px solid #111;
+    /* Optional: blend with background */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    /* Thumb color on hover */
+}
+
+
+
+/* Responsivness */
+
+
+
+@media (max-width: 800px) {
+    body {
+        overflow-x: visible;
+    }
+
+    nav .homeicon {
+        display: none;
+    }
+
+    nav .searchbar {
+        display: none;
+    }
+
+    nav .Premium {
+        display: none;
+    }
+
+    nav .Support {
+        display: none;
+    }
+
+    nav .Download {
+        display: none;
+    }
+
+    nav .line {
+        display: none;
+    }
+
+    nav .install {
+        display: none;
+    }
+
+    nav .Signup {
+        display: none;
+    }
+
+    nav .Login {
+        display: none;
+    }
+
+    nav {
+        position: fixed;
+        background-color: black;
+        z-index: 10;
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        width: 99vw;
+    }
+
+    nav .logo::after {
+        content: "Spotify";
+        color: white;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-weight: 900;
+    }
+
+    nav .logo .soptify_logo {
+        height: 28px !important;
+        width: 28px !important;
+    }
+
+    nav .logo {
+        display: flex;
+        gap: 5px;
+    }
+
+    nav .openapp {
+        display: flex;
+        gap: 10px;
+        padding-right: 8px;
+    }
+
+    nav .openapp button {
+        border: none;
+        text-align: center;
+        font-size: 12px;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bolder;
+    }
+
+    .boxes {
+        padding-top: 45px;
+    }
+
+    .boxes .box1 {
+        position: fixed;
+        right: -100%;
+        z-index: 11;
+        transition: right 0.3s ease-in-out;
+        top: 55px;
+    }
+
+    .boxes .box1 footer {
+        background-color: rgb(23, 22, 22) !important;
+        background-image: none !important;
+        /* This removes the gradient */
+        padding: 20px;
+        padding-bottom: 15px;
+        display: flex;
+        padding-top: 55px;
+        padding-right: 37px;
+        font-size: 12px;
+        justify-content: space-between;
+        color: rgb(138, 138, 138);
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    .boxes .box1 .newfooter {
+        background-color: rgb(23, 22, 22) !important;
+        background-image: none !important;
+        /* This removes the gradient */
+        padding-left: 20px;
+        padding-right: 37px;
+        padding-top: 0px;
+        font-size: 12px;
+        justify-content: start;
+        color: rgb(138, 138, 138);
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    .box1.active {
+        right: 8px;
+        top: 48px;
+        width: 80vw;
+        height: 75vh;
+    }
+
+    .boxes .box2 {
+        width: 100vw;
+    }
+
+    .boxes .box2 h2 {
+        padding-left: 15px;
+    }
+
+    .boxes .box2 .songslist {
+        padding-left: 10px;
+    }
+
+    .boxes .box2 .songlib {
+        padding-left: 15px;
+    }
+
+    .boxes .box2 .artistlist .allartist{
+        padding-bottom: 5px;
+    }
+
+    .boxes .box2 .box2footer {
+        overflow-x: scroll;
+        padding-bottom: 15px;
+    }
+
+    .boxes .box2 .box2footer .footerbox1 h4 {
+        font-size: 0.9rem;
+    }
+
+    .boxes .box2 .box2footer .footerbox1 .sub {
+        font-size: 0.8rem;
+        overflow: hidden;
+        height:15px;
+    }
+
+    .seekbar {
+        /* display: none; */
+    }
+
+    .endingfooter {
+        /* display: none; */
+        padding: 5px;
+    }
+
+    .endingfooter .seekbar {
+        padding-top: 0;
+        width: 98vw;
+    }
+
+    .endingfooter .seekbar .musicflex .songinfo {
+        font-size: 12px;
+        width: 70px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .endingfooter .seekbar .musicflex .songbtns .previous {
+        height: 18px;
+        width: 18px;
+    }
+
+    .endingfooter .seekbar .musicflex .songbtns .pauseplay {
+        height: 18px;
+        width: 18px;
+    }
+
+    .endingfooter .seekbar .musicflex .songbtns .next {
+        height: 18px;
+        width: 18px;
+    }
+
+    .endingfooter .seekbar .musicflex .songtime {
+        font-size: 10px;
+    }
+
+    .footernav {
+        display: flex;
+        /* bottom: 60px; */
+        /* position: relative; */
+        /* z-index: 99; */
+        padding: 15px;
+        align-items: center;
+        justify-content: space-between;
+        padding-right: 25px;
+        padding-left: 25px;
+    }
+
+    .footernav .homedraw {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 10px;
+    }
+
+    .footernav .mobsearch {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 10px;
+    }
+
+    .footernav .mobliv {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 10px;
+    }
+
+    .footernav .moblogo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 10px;
+    }
+
+    .endingfooter .musicflex .timevol .volume img {
+        height: 18px;
+        width: 18px;
+    }
+
+    .endingfooter .musicflex .timevol .volume .range input {
+        width: 50px !important;
+        height: 20px;
+    }
+}

@@ -1,0 +1,10 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer circle with black fill and border in rgb(142, 141, 141) -->
+  <circle cx="32" cy="32" r="30" fill="black" stroke="rgb(142, 141, 141)" stroke-width="4" />
+  <!-- Down arrow in rgb(142, 141, 141) -->
+  <path d="M32 45V23" stroke="rgb(142, 141, 141)" stroke-width="4" stroke-linecap="round" />
+  <path d="M22 35L32 45L42 35" fill="rgb(142, 141, 141)" />
+</svg>
+
+
+

@@ -1,0 +1,14 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgb(33,33,33)" />
+      <stop offset="100%" stop-color="rgb(18,18,18)" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" fill="url(#bgGradient)" />
+  <!-- Play triangle -->
+  <polygon points="16,12 44,32 16,52" fill="#fff"/>
+  <!-- Next double vertical bars -->
+  <rect x="48" y="12" width="4" height="40" fill="#fff"/>
+  <rect x="56" y="12" width="4" height="40" fill="#fff"/>
+</svg>
