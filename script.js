@@ -137,57 +137,45 @@
 //     return `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
 // }
 
-// document.querySelector("#previous").addEventListener("click", () => {
-//     let songs = Array.from(document.querySelectorAll(".lib1 .songname"));
-//     let currentSongName = document.querySelector(".songinfo").innerText.trim();
-//     let index = songs.findIndex(e => e.innerText.trim() === currentSongName);
+document.querySelector("#previous").addEventListener("click", () => {
+    let songs = Array.from(document.querySelectorAll(".lib1 .songname"));
+    let currentSongName = document.querySelector(".songinfo").innerText.trim();
+    let index = songs.findIndex(e => e.innerText.trim() === currentSongName);
 
-//     if (index > 0) {
-//         let prevSong = songs[index - 1].innerText.trim();
-//         if (!prevSong.endsWith(".mp3")) prevSong += ".mp3";
-//         playmusic(prevSong);
-//     }
-//     else {
-//         alert("This is the First Song")
-//     }
-// });
+    if (index > 0) {
+        let prevSong = songs[index - 1].innerText.trim();
+        if (!prevSong.endsWith(".mp3")) prevSong += ".mp3";
+        playmusic(prevSong);
+    }
+    else {
+        alert("This is the First Song")
+    }
+});
 
-// document.querySelector("#next").addEventListener("click", () => {
-//     let songs = Array.from(document.querySelectorAll(".lib1 .songname"));
-//     let currentSongName = document.querySelector(".songinfo").innerText.trim();
-//     let index = songs.findIndex(e => e.innerText.trim() === currentSongName);
+document.querySelector("#next").addEventListener("click", () => {
+    let songs = Array.from(document.querySelectorAll(".lib1 .songname"));
+    let currentSongName = document.querySelector(".songinfo").innerText.trim();
+    let index = songs.findIndex(e => e.innerText.trim() === currentSongName);
 
-//     if (index >= 0 && index < songs.length - 1) {
-//         let nextSong = songs[index + 1].innerText.trim();
-//         if (!nextSong.endsWith(".mp3")) nextSong += ".mp3";
-//         playmusic(nextSong);
-//     }
-//     else {
-//         alert("This was the Last Song...")
-//     }
-// });
+    if (index >= 0 && index < songs.length - 1) {
+        let nextSong = songs[index + 1].innerText.trim();
+        if (!nextSong.endsWith(".mp3")) nextSong += ".mp3";
+        playmusic(nextSong);
+    }
+    else {
+        alert("This was the Last Song...")
+    }
+});
 
-// let leftbox = document.querySelector(".box1");
-// let crossicon = document.querySelector(".openapp img");
-// document.querySelectorAll(".hamburger").forEach((button) => {
-//     button.addEventListener("click", () => {
-//         leftbox.classList.toggle("active");
-//         crossicon.src = leftbox.classList.contains("active") ? "crossicon.svg" : "hamburger.svg";
-//     });
 
-//     document.querySelector(".range").getElementsByTagName("input")[0].addEventListener("change", (e) => {
-//         currentsong.volume = e.target.value / 100;
-//     })
-
-// });
 
 // main();
 
-// const homeiconhover = document.querySelector("nav .homeicon img")
+const homeiconhover = document.querySelector("nav .homeicon img")
 
-// homeiconhover.addEventListener("mouseenter",()=>{
-//     homeiconhover.style.cursor = "pointer";
-// })
+homeiconhover.addEventListener("mouseenter",()=>{
+    homeiconhover.style.cursor = "pointer";
+})
 
 // Function to get the list of songs from JSON
 
@@ -321,10 +309,18 @@ if (posters[9]) posters[9].src = "whereallthetimego.jpg";
 }
 
 // 5. Hamburger Logic (Outside main)
+let leftbox = document.querySelector(".box1");
+let crossicon = document.querySelector(".openapp img");
 document.querySelectorAll(".hamburger").forEach((button) => {
     button.addEventListener("click", () => {
-        document.querySelector(".box1").classList.toggle("active");
+        leftbox.classList.toggle("active");
+        crossicon.src = leftbox.classList.contains("active") ? "crossicon.svg" : "hamburger.svg";
     });
+
+    document.querySelector(".range").getElementsByTagName("input")[0].addEventListener("change", (e) => {
+        currentsong.volume = e.target.value / 100;
+    })
+
 });
 
 // Start the app
