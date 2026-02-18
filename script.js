@@ -18,10 +18,15 @@
 // }
 
 async function getsongs() {
-    // 1. Fetch the JSON file you created
-    let a = await fetch("songs.json");
-    let songs = await a.json(); // This gets the array of song names directly
-    return songs;
+    try {
+        let a = await fetch("songs.json");
+        if (!a.ok) throw new Error("Could not find songs.json");
+        let songs = await a.json(); 
+        return songs;
+    } catch (error) {
+        console.error("Error fetching songs:", error);
+        return []; // Returns empty array so the rest of the code doesn't crash
+    }
 }
 
 let currentsong = new Audio();
@@ -45,22 +50,35 @@ const playmusic = (track) => {
 async function main() {
     let songs = await getsongs();
 
-    let songdiv = document.querySelector(".lib1").getElementsByTagName("ul")[0];
-    songdiv.innerHTML = "";
+    // Find the <ul> inside your library div
+    let songUL = document.querySelector(".lib1").getElementsByTagName("ul")[0];
+    songUL.innerHTML = "";
 
-    // 3. Updated Loop: No more looking for <a> tags
     for (const song of songs) {
+        // Remove .mp3 and fix spaces for the display name
         let displayName = song.replace(".mp3", "").replaceAll("%20", " ");
-        songdiv.innerHTML += `
+        
+        songUL.innerHTML += `
             <li>
                 <div class="song1here">
                     <img src="greenplayicon.svg" height="45px" width="45px" class="playhere">
-                    <img class="songposter" src="poster.jpg" height="150px" width="140px" style="padding: 10px;border-radius: 10px;">
-                    <div class="songname">${song}</div> 
-                    <div class="artistname"></div>
+                    <img class="songposter" src="poster.jpg" height="150px" width="140px" style="padding: 10px; border-radius: 10px;">
+                    <div class="info">
+                        <div class="songname">${song}</div>
+                        <div class="artistname">Artist</div>
+                    </div>
                 </div>
             </li>`;
     }
+
+    // Attach click listeners to each <li>
+    Array.from(document.querySelectorAll(".lib1 li")).forEach(e => {
+        e.addEventListener("click", () => {
+            let songName = e.querySelector(".songname").innerText.trim();
+            playmusic(songName);
+        });
+    });
+}
 
     // ... (Keep your artistname and posters logic here) ...
 
