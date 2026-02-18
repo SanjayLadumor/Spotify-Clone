@@ -1,20 +1,26 @@
+// async function getsongs() {
+
+//     let a = await fetch("songs.json")
+//     let response = await a.text();
+//     // console.log(response);
+//     let div = document.createElement("div")
+//     div.innerHTML = response;
+//     let as = div.getElementsByTagName("a")
+//     let songs = []
+//     for (let index = 0; index < as.length; index++) {
+//         const element = as[index];
+//         if (element.href.endsWith(".mp3")) {
+//             songs.push(element.href.split("/songs/")[1])
+//         }
+//     }
+//     return songs
+
+// }
+
 async function getsongs() {
-
-    let a = await fetch("songs.json")
-    let response = await a.text();
-    // console.log(response);
-    let div = document.createElement("div")
-    div.innerHTML = response;
-    let as = div.getElementsByTagName("a")
-    let songs = []
-    for (let index = 0; index < as.length; index++) {
-        const element = as[index];
-        if (element.href.endsWith(".mp3")) {
-            songs.push(element.href.split("/songs/")[1])
-        }
-    }
-    return songs
-
+    let a = await fetch("songs.json");
+    let songs = await a.json(); // Use .json() instead of .text()
+    return songs;
 }
 
 let currentsong = new Audio();
@@ -23,7 +29,8 @@ let currentsong = new Audio();
 
 const playmusic = (track) => {
     console.log("Attempting to play:", track);
-    currentsong.src = "songs.json" + encodeURIComponent(track);
+    // currentsong.src = "songs.json" + encodeURIComponent(track);
+    currentsong.src = "/songs/" + track;
 
     document.querySelector(".songinfo").innerHTML = decodeURI(track);
     document.querySelector(".songtime").innerHTML = "00:00 / 00:00";
