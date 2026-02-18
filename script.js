@@ -165,20 +165,7 @@
 //     });
 // }
 
-// // 5. Hamburger Logic (Outside main)
-// let leftbox = document.querySelector(".box1");
-// let crossicon = document.querySelector(".openapp img");
-// document.querySelectorAll(".hamburger").forEach((button) => {
-//     button.addEventListener("click", () => {
-//         leftbox.classList.toggle("active");
-//         crossicon.src = leftbox.classList.contains("active") ? "crossicon.svg" : "hamburger.svg";
-//     });
 
-//     document.querySelector(".range").getElementsByTagName("input")[0].addEventListener("change", (e) => {
-//         currentsong.volume = e.target.value / 100;
-//     })
-
-// });
 
 // // Start the app
 // main();
@@ -311,18 +298,34 @@ if (posters[9]) posters[9].src = "whereallthetimego.jpg";
         }
     });
 
+    // document.querySelector(".seekline").addEventListener("click", e => {
+    //     let percent = (e.offsetX / e.target.getBoundingClientRect().width) * 100;
+    //     document.querySelector(".circle").style.left = percent + "%";
+    //     currentsong.currentTime = (currentsong.duration * percent) / 100;
+    // });
     document.querySelector(".seekline").addEventListener("click", e => {
-        let percent = (e.offsetX / e.target.getBoundingClientRect().width) * 100;
+        let rect = e.currentTarget.getBoundingClientRect();
+        let percent = ((e.clientX - rect.left) / rect.width) * 100;
+        if (percent < 0) percent = 0;
+        if (percent > 100) percent = 100;
         document.querySelector(".circle").style.left = percent + "%";
         currentsong.currentTime = (currentsong.duration * percent) / 100;
     });
 }
 
-// 5. Global Mobile/UI Logic
+// 5. Hamburger Logic (Outside main)
+let leftbox = document.querySelector(".box1");
+let crossicon = document.querySelector(".openapp img");
 document.querySelectorAll(".hamburger").forEach((button) => {
     button.addEventListener("click", () => {
-        document.querySelector(".box1").classList.toggle("active");
+        leftbox.classList.toggle("active");
+        crossicon.src = leftbox.classList.contains("active") ? "crossicon.svg" : "hamburger.svg";
     });
+
+    document.querySelector(".range").getElementsByTagName("input")[0].addEventListener("change", (e) => {
+        currentsong.volume = e.target.value / 100;
+    })
+
 });
 
 // Run
