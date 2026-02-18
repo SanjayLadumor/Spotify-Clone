@@ -1,114 +1,20 @@
 // async function getsongs() {
-
-//     let a = await fetch("songs.json")
-//     let response = await a.text();
-//     // console.log(response);
-//     let div = document.createElement("div")
-//     div.innerHTML = response;
-//     let as = div.getElementsByTagName("a")
-//     let songs = []
-//     for (let index = 0; index < as.length; index++) {
-//         const element = as[index];
-//         if (element.href.endsWith(".mp3")) {
-//             songs.push(element.href.split("/songs/")[1])
-//         }
+//     try {
+//         let a = await fetch("songs.json");
+//         if (!a.ok) throw new Error("Could not find songs.json");
+//         let songs = await a.json(); 
+//         return songs;
+//     } catch (error) {
+//         console.error("Error fetching songs:", error);
+//         return [];
 //     }
-//     return songs
-
-// }
-
-async function getsongs() {
-    try {
-        let a = await fetch("songs.json");
-        if (!a.ok) throw new Error("Could not find songs.json");
-        let songs = await a.json(); 
-        return songs;
-    } catch (error) {
-        console.error("Error fetching songs:", error);
-        return []; // Returns empty array so the rest of the code doesn't crash
-    }
-}
-
-let currentsong = new Audio();
-
-const playmusic = (track) => {
-    console.log("Attempting to play:", track);
-    // 2. IMPORTANT: Point to your "songs" folder
-    currentsong.src = "/songs/" + encodeURIComponent(track);
-
-    document.querySelector(".songinfo").innerHTML = decodeURI(track);
-    document.querySelector(".songtime").innerHTML = "00:00 / 00:00";
-
-    currentsong.play().then(() => {
-        play.src = "pausebtn.svg";
-    }).catch(e => {
-        console.error("Playback failed:", e);
-        play.src = "playbtn.svg";
-    });
-}
-
-async function main() {
-    let songs = await getsongs();
-
-    // Find the <ul> inside your library div
-    let songUL = document.querySelector(".lib1").getElementsByTagName("ul")[0];
-    songUL.innerHTML = "";
-
-    for (const song of songs) {
-        // Remove .mp3 and fix spaces for the display name
-        let displayName = song.replace(".mp3", "").replaceAll("%20", " ");
-        
-        songUL.innerHTML += `
-            <li>
-                <div class="song1here">
-                    <img src="greenplayicon.svg" height="45px" width="45px" class="playhere">
-                    <img class="songposter" src="poster.jpg" height="150px" width="140px" style="padding: 10px; border-radius: 10px;">
-                    <div class="info">
-                        <div class="songname">${song}</div>
-                        <div class="artistname">Artist</div>
-                    </div>
-                </div>
-            </li>`;
-    }
-
-    // Attach click listeners to each <li>
-    Array.from(document.querySelectorAll(".lib1 li")).forEach(e => {
-        e.addEventListener("click", () => {
-            let songName = e.querySelector(".songname").innerText.trim();
-            playmusic(songName);
-        });
-    });
-}
-
-    // ... (Keep your artistname and posters logic here) ...
-
-    // Song Click Listener
-    Array.from(document.querySelectorAll(".lib1 li")).forEach(e => {
-        e.addEventListener("click", () => {
-            let songName = e.querySelector(".songname").innerText.trim();
-            playmusic(songName);
-        });
-    });
-
-    // ... (Keep the rest of your play/pause and seekbar listeners) ...
-}
-
-main();
-
-// async function getsongs() {
-//     let a = await fetch("songs.json");
-//     let songs = await a.json(); // Use .json() instead of .text()
-//     return songs;
 // }
 
 // let currentsong = new Audio();
 
-// // This is old From Code With Harry
-
 // const playmusic = (track) => {
 //     console.log("Attempting to play:", track);
-//     // currentsong.src = "songs.json" + encodeURIComponent(track);
-//     currentsong.src = "/songs/" + track;
+//     currentsong.src = "/songs/" + encodeURIComponent(track);
 
 //     document.querySelector(".songinfo").innerHTML = decodeURI(track);
 //     document.querySelector(".songtime").innerHTML = "00:00 / 00:00";
@@ -124,68 +30,242 @@ main();
 // async function main() {
 //     let songs = await getsongs();
 
-//     let songdiv = document.querySelector(".lib1").getElementsByTagName("ul")[0];
-//     songdiv.innerHTML = "";
+//     let songUL = document.querySelector(".lib1").getElementsByTagName("ul")[0];
+//     songUL.innerHTML = "";
 
 //     for (const song of songs) {
-//         let displayName = song.replaceAll("%20", " ");
-//         songdiv.innerHTML += `
-//             <ol>
+//         let displayName = song.replace(".mp3", "").replaceAll("%20", " ");
+        
+//         songUL.innerHTML += `
+//             <li>
 //                 <div class="song1here">
 //                     <img src="greenplayicon.svg" height="45px" width="45px" class="playhere">
-//                     <img class="songposter" src="poster.jpg" height="150px" width="140px" style="padding: 10px;border-radius: 10px;">
-//                     <div class="songname">${displayName}</div>
-//                     <div class="artistname"></div>
+//                     <img class="songposter" src="poster.jpg" height="150px" width="140px" style="padding: 10px; border-radius: 10px;">
+//                     <div class="info">
+//                         <div class="songname">${song}</div>
+//                         <div class="artistname">Artist</div>
+//                     </div>
 //                 </div>
-//             </ol>`;
+//             </li>`;
 //     }
 
-    let singername = document.querySelectorAll(".artistname");
-    if (singername[0]) singername[0].innerText = "Alex Warren";
-    if (singername[1]) singername[1].innerText = "Harry Styles";
-    if (singername[2]) singername[2].innerText = "Djo";
-    if (singername[3]) singername[3].innerText = "JVKE";
-    if (singername[4]) singername[4].innerText = "Lana Del Rey";
-    if (singername[5]) singername[5].innerText = "Lana Del Rey";
-    if (singername[6]) singername[6].innerText = "Lord Huron";
-    if (singername[7]) singername[7].innerText = "Ed Sheeran";
-    if (singername[8]) singername[8].innerText = "Rihanna";
-    if (singername[9]) singername[9].innerText = "Dr. Dog";
+//     Array.from(document.querySelectorAll(".lib1 li")).forEach(e => {
+//         e.addEventListener("click", () => {
+//             let songName = e.querySelector(".songname").innerText.trim();
+//             playmusic(songName);
+//         });
+//     });
+// }
 
-    let posters = document.querySelectorAll(".songposter");
+//     Array.from(document.querySelectorAll(".lib1 li")).forEach(e => {
+//         e.addEventListener("click", () => {
+//             let songName = e.querySelector(".songname").innerText.trim();
+//             playmusic(songName);
+//         });
+//     });
 
-    if (posters[0]) posters[0].src = "ordiary.jpg";
-    if (posters[1]) posters[1].src = "asitwas.jpg";
-    if (posters[2]) posters[2].src = "end of beginning.jpg";
-    if (posters[3]) posters[3].src = "her.jpg";
-    if (posters[4]) posters[4].src = "poster.jpg";
-    if (posters[5]) posters[5].src = "youngandbeautiful.jpg";
-    if (posters[6]) posters[6].src = "nightwemet.jpg";
-    if (posters[7]) posters[7].src = "perfect.jpg";
-    if (posters[8]) posters[8].src = "liftmeup.jpg";
-    if (posters[9]) posters[9].src = "whereallthetimego.jpg";
+// }
 
-    // Song Click Listener
-    Array.from(document.querySelectorAll(".lib1 ol")).forEach(e => {
+// main();
+
+//     let singername = document.querySelectorAll(".artistname");
+//     if (singername[0]) singername[0].innerText = "Alex Warren";
+//     if (singername[1]) singername[1].innerText = "Harry Styles";
+//     if (singername[2]) singername[2].innerText = "Djo";
+//     if (singername[3]) singername[3].innerText = "JVKE";
+//     if (singername[4]) singername[4].innerText = "Lana Del Rey";
+//     if (singername[5]) singername[5].innerText = "Lana Del Rey";
+//     if (singername[6]) singername[6].innerText = "Lord Huron";
+//     if (singername[7]) singername[7].innerText = "Ed Sheeran";
+//     if (singername[8]) singername[8].innerText = "Rihanna";
+//     if (singername[9]) singername[9].innerText = "Dr. Dog";
+
+//     let posters = document.querySelectorAll(".songposter");
+
+//     if (posters[0]) posters[0].src = "ordiary.jpg";
+//     if (posters[1]) posters[1].src = "asitwas.jpg";
+//     if (posters[2]) posters[2].src = "end of beginning.jpg";
+//     if (posters[3]) posters[3].src = "her.jpg";
+//     if (posters[4]) posters[4].src = "poster.jpg";
+//     if (posters[5]) posters[5].src = "youngandbeautiful.jpg";
+//     if (posters[6]) posters[6].src = "nightwemet.jpg";
+//     if (posters[7]) posters[7].src = "perfect.jpg";
+//     if (posters[8]) posters[8].src = "liftmeup.jpg";
+//     if (posters[9]) posters[9].src = "whereallthetimego.jpg";
+
+//     // Song Click Listener
+//     Array.from(document.querySelectorAll(".lib1 ol")).forEach(e => {
+//         e.addEventListener("click", () => {
+//             let songName = e.querySelector(".songname").innerText.trim();
+//             if (!songName.toLowerCase().endsWith(".mp3")) songName += ".mp3";
+//             playmusic(songName);
+//         });
+//     });
+
+//     play.addEventListener("click", () => {
+//         if (currentsong.paused) {
+//             currentsong.play();
+//             play.src = "pausebtn.svg";
+//         } else {
+//             currentsong.pause();
+//             play.src = "playbtn.svg";
+//         }
+//     });
+
+//     currentsong.addEventListener("timeupdate", () => {
+//         document.querySelector(".songtime").innerHTML = `${secondsToMinutesSeconds(currentsong.currentTime)} / ${secondsToMinutesSeconds(currentsong.duration)}`;
+//         if (currentsong.duration) {
+//             let progress = (currentsong.currentTime / currentsong.duration) * 100;
+//             document.querySelector(".circle").style.left = progress + "%";
+//         }
+//     });
+
+//     document.querySelector(".seekline").addEventListener("click", e => {
+//         let rect = e.currentTarget.getBoundingClientRect();
+//         let percent = ((e.clientX - rect.left) / rect.width) * 100;
+//         if (percent < 0) percent = 0;
+//         if (percent > 100) percent = 100;
+//         document.querySelector(".circle").style.left = percent + "%";
+//         currentsong.currentTime = (currentsong.duration * percent) / 100;
+//     });
+// }
+
+// function secondsToMinutesSeconds(seconds) {
+//     if (isNaN(seconds) || seconds < 0) return "00:00";
+//     const minutes = Math.floor(seconds / 60);
+//     const remainingSeconds = Math.floor(seconds % 60);
+//     return `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
+// }
+
+// document.querySelector("#previous").addEventListener("click", () => {
+//     let songs = Array.from(document.querySelectorAll(".lib1 .songname"));
+//     let currentSongName = document.querySelector(".songinfo").innerText.trim();
+//     let index = songs.findIndex(e => e.innerText.trim() === currentSongName);
+
+//     if (index > 0) {
+//         let prevSong = songs[index - 1].innerText.trim();
+//         if (!prevSong.endsWith(".mp3")) prevSong += ".mp3";
+//         playmusic(prevSong);
+//     }
+//     else {
+//         alert("This is the First Song")
+//     }
+// });
+
+// document.querySelector("#next").addEventListener("click", () => {
+//     let songs = Array.from(document.querySelectorAll(".lib1 .songname"));
+//     let currentSongName = document.querySelector(".songinfo").innerText.trim();
+//     let index = songs.findIndex(e => e.innerText.trim() === currentSongName);
+
+//     if (index >= 0 && index < songs.length - 1) {
+//         let nextSong = songs[index + 1].innerText.trim();
+//         if (!nextSong.endsWith(".mp3")) nextSong += ".mp3";
+//         playmusic(nextSong);
+//     }
+//     else {
+//         alert("This was the Last Song...")
+//     }
+// });
+
+// let leftbox = document.querySelector(".box1");
+// let crossicon = document.querySelector(".openapp img");
+// document.querySelectorAll(".hamburger").forEach((button) => {
+//     button.addEventListener("click", () => {
+//         leftbox.classList.toggle("active");
+//         crossicon.src = leftbox.classList.contains("active") ? "crossicon.svg" : "hamburger.svg";
+//     });
+
+//     document.querySelector(".range").getElementsByTagName("input")[0].addEventListener("change", (e) => {
+//         currentsong.volume = e.target.value / 100;
+//     })
+
+// });
+
+// main();
+
+// const homeiconhover = document.querySelector("nav .homeicon img")
+
+// homeiconhover.addEventListener("mouseenter",()=>{
+//     homeiconhover.style.cursor = "pointer";
+// })
+
+// Function to get the list of songs from JSON
+async function getsongs() {
+    let a = await fetch("songs.json");
+    let songs = await a.json(); // This reads the JSON array directly
+    return songs;
+}
+
+let currentsong = new Audio();
+
+// Function to play music
+const playmusic = (track) => {
+    console.log("Attempting to play:", track);
+    // Use "songs/" + filename to point to your folder
+    currentsong.src = "songs/" + track; 
+
+    document.querySelector(".songinfo").innerHTML = decodeURI(track).replace(".mp3", "");
+    document.querySelector(".songtime").innerHTML = "00:00 / 00:00";
+
+    currentsong.play().then(() => {
+        document.querySelector("#play").src = "pausebtn.svg";
+    }).catch(e => {
+        console.error("Playback failed:", e);
+        document.querySelector("#play").src = "playbtn.svg";
+    });
+}
+
+async function main() {
+    let songs = await getsongs();
+
+    // Select the <ul> inside .lib1
+    let songdiv = document.querySelector(".lib1").getElementsByTagName("ul")[0];
+    songdiv.innerHTML = "";
+
+    // Loop through the array from JSON
+    for (const song of songs) {
+        let displayName = song.replace(".mp3", "").replaceAll("%20", " ");
+        songdiv.innerHTML += `
+            <li class="song-item">
+                <div class="song1here">
+                    <img src="greenplayicon.svg" height="45px" width="45px" class="playhere">
+                    <img class="songposter" src="poster.jpg" height="150px" width="140px" style="padding: 10px;border-radius: 10px;">
+                    <div class="song-details">
+                        <div class="songname">${song}</div>
+                        <div class="artistname"></div>
+                    </div>
+                </div>
+            </li>`;
+    }
+
+    // Set Artist Names and Posters (Manual setup)
+    let artists = ["Alex Warren", "Harry Styles", "Djo", "JVKE", "Lana Del Rey", "Lana Del Rey", "Lord Huron", "Ed Sheeran", "Rihanna", "Dr. Dog"];
+    let posterFiles = ["ordiary.jpg", "asitwas.jpg", "end of beginning.jpg", "her.jpg", "poster.jpg", "youngandbeautiful.jpg", "nightwemet.jpg", "perfect.jpg", "liftmeup.jpg", "whereallthetimego.jpg"];
+
+    document.querySelectorAll(".artistname").forEach((div, i) => { if(artists[i]) div.innerText = artists[i]; });
+    document.querySelectorAll(".songposter").forEach((img, i) => { if(posterFiles[i]) img.src = posterFiles[i]; });
+
+    // Add Click Listeners to each song
+    Array.from(document.querySelectorAll(".song-item")).forEach(e => {
         e.addEventListener("click", () => {
             let songName = e.querySelector(".songname").innerText.trim();
-            if (!songName.toLowerCase().endsWith(".mp3")) songName += ".mp3";
             playmusic(songName);
         });
     });
 
-    // Play/Pause Listener
-    play.addEventListener("click", () => {
+    // Play/Pause Button Listener
+    let playBtn = document.querySelector("#play");
+    playBtn.addEventListener("click", () => {
         if (currentsong.paused) {
             currentsong.play();
-            play.src = "pausebtn.svg";
+            playBtn.src = "pausebtn.svg";
         } else {
             currentsong.pause();
-            play.src = "playbtn.svg";
+            playBtn.src = "playbtn.svg";
         }
     });
 
-    // Time Update
+    // Time and Seekbar logic
     currentsong.addEventListener("timeupdate", () => {
         document.querySelector(".songtime").innerHTML = `${secondsToMinutesSeconds(currentsong.currentTime)} / ${secondsToMinutesSeconds(currentsong.duration)}`;
         if (currentsong.duration) {
@@ -194,18 +274,12 @@ main();
         }
     });
 
-    // Seekbar Listener
     document.querySelector(".seekline").addEventListener("click", e => {
         let rect = e.currentTarget.getBoundingClientRect();
         let percent = ((e.clientX - rect.left) / rect.width) * 100;
-        if (percent < 0) percent = 0;
-        if (percent > 100) percent = 100;
-        document.querySelector(".circle").style.left = percent + "%";
         currentsong.currentTime = (currentsong.duration * percent) / 100;
     });
 }
-
-// --- GLOBAL HELPERS & BUTTONS (OUTSIDE MAIN) ---
 
 function secondsToMinutesSeconds(seconds) {
     if (isNaN(seconds) || seconds < 0) return "00:00";
@@ -214,58 +288,4 @@ function secondsToMinutesSeconds(seconds) {
     return `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
 }
 
-// Previous Button
-document.querySelector("#previous").addEventListener("click", () => {
-    let songs = Array.from(document.querySelectorAll(".lib1 .songname"));
-    let currentSongName = document.querySelector(".songinfo").innerText.trim();
-    let index = songs.findIndex(e => e.innerText.trim() === currentSongName);
-
-    if (index > 0) {
-        let prevSong = songs[index - 1].innerText.trim();
-        if (!prevSong.endsWith(".mp3")) prevSong += ".mp3";
-        playmusic(prevSong);
-    }
-    else {
-        alert("This is the First Song")
-    }
-});
-
-// Next Button
-document.querySelector("#next").addEventListener("click", () => {
-    let songs = Array.from(document.querySelectorAll(".lib1 .songname"));
-    let currentSongName = document.querySelector(".songinfo").innerText.trim();
-    let index = songs.findIndex(e => e.innerText.trim() === currentSongName);
-
-    if (index >= 0 && index < songs.length - 1) {
-        let nextSong = songs[index + 1].innerText.trim();
-        if (!nextSong.endsWith(".mp3")) nextSong += ".mp3";
-        playmusic(nextSong);
-    }
-    else {
-        alert("This was the Last Song...")
-    }
-});
-
-// Mobile Hamburger Logic
-let leftbox = document.querySelector(".box1");
-let crossicon = document.querySelector(".openapp img");
-document.querySelectorAll(".hamburger").forEach((button) => {
-    button.addEventListener("click", () => {
-        leftbox.classList.toggle("active");
-        crossicon.src = leftbox.classList.contains("active") ? "crossicon.svg" : "hamburger.svg";
-    });
-
-    document.querySelector(".range").getElementsByTagName("input")[0].addEventListener("change", (e) => {
-        currentsong.volume = e.target.value / 100;
-    })
-
-});
-
-// Start the app
 main();
-
-const homeiconhover = document.querySelector("nav .homeicon img")
-
-homeiconhover.addEventListener("mouseenter",()=>{
-    homeiconhover.style.cursor = "pointer";
-})
