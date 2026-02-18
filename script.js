@@ -1,6 +1,6 @@
 async function getsongs() {
 
-    let a = await fetch("/songs/")
+    let a = await fetch("songs.json")
     let response = await a.text();
     // console.log(response);
     let div = document.createElement("div")
@@ -23,7 +23,7 @@ let currentsong = new Audio();
 
 const playmusic = (track) => {
     console.log("Attempting to play:", track);
-    currentsong.src = "/songs/" + encodeURIComponent(track);
+    currentsong.src = "songs.json" + encodeURIComponent(track);
 
     document.querySelector(".songinfo").innerHTML = decodeURI(track);
     document.querySelector(".songtime").innerHTML = "00:00 / 00:00";
@@ -35,167 +35,6 @@ const playmusic = (track) => {
         play.src = "playbtn.svg";
     });
 }
-
-// const playmusic = (track)=>{
-//     // let audio = new Audio("/songs/" + track)
-//     console.log("trying to play:",track)
-//     currentsong.src = "/songs/" + track
-//     currentsong.play()
-// }
-
-// async function main() {
-
-//     //Get the list of all songs
-
-//     let songs = await getsongs()
-//     console.log(songs)
-
-//     //Show all the songs in playlist
-
-//     let songdiv = document.querySelector(".lib1").getElementsByTagName("ul")[0]
-//     for (const song of songs) {
-//         songdiv.innerHTML = songdiv.innerHTML + `<ol>
-
-//         <div class="song1here">
-//                             <img src="greenplayicon.svg" height="45px" width="45px" class="playhere">
-//                             <img src="poster.jpg" height="150px" width="140px" style="padding: 10px;border-radius: 10px;">
-//                             <div class="songname">
-//                                 ${song.replaceAll("%20", " ")} 
-//                             </div>
-//                             <div class="artistname">
-//                                 Sanjay
-//                             </div>
-//                         </div>
-
-//         <ol>`;
-//     }
-
-//     // Attach an Event listener to each song
-//     Array.from(document.querySelector(".lib1").getElementsByTagName("ol")).forEach(e => {
-//         e.addEventListener("click", element => {
-//             console.log(e.querySelector(".songname").innerHTML);
-//             playmusic(e.querySelector(".songname").innerHTML.trim());
-//             playmusic()
-//     })
-
-//     })
-
-// }
-
-// This is new AI Generated 
-
-// 1. Corrected playmusic function
-
-// const PlayMusic = (track)=>{
-//     let audio = new Audio("/songs/" + track)
-//     track.play()
-// }
-
-// const playmusic = (track) => {
-//     console.log("trying to play:", track);
-//     // Ensure the path is correct and encoded for URLs
-//     currentsong.src = "/songs/" + encodeURIComponent(track);
-
-//     currentsong.play().catch(e => {
-//         console.error("Playback failed:", e);
-//     });
-// }
-
-// async function main() {
-//     // Get the list of all songs
-//     let songs = await getsongs();
-//     console.log(songs);
-
-//     // Show all the songs in playlist
-//     let songdiv = document.querySelector(".lib1").getElementsByTagName("ul")[0];
-//     songdiv.innerHTML = ""; // Clear existing content first
-
-//     for (const song of songs) {
-//         // Clean up the name for display
-//         let displayName = song.replaceAll("%20", " ");
-
-//         songdiv.innerHTML += `<ol>
-//             <div class="song1here">
-//                 <img src="greenplayicon.svg" height="45px" width="45px" class="playhere">
-//                 <img src="poster.jpg" height="150px" width="140px" style="padding: 10px;border-radius: 10px;">
-//                 <div class="songname">${displayName}</div>
-//                 <div class="artistname">Sanjay</div>
-//             </div>
-//         </ol>`;
-//     }
-
-//     // 2. Corrected Event Listener
-//     Array.from(document.querySelectorAll(".lib1 ol")).forEach(e => {
-//         e.addEventListener("click", () => {
-//             let songName = e.querySelector(".songname").innerHTML.trim();
-//             console.log("Selected song:", songName);
-//             playmusic(songName); // Call it ONLY ONCE with the name
-//         });
-//     });
-
-//     // Attach an Event Listerner to each song
-//     Array.from(document.querySelector(".lib1").getElementsByTagName("ol")).forEach(e => {
-//         e.addEventListener("click",element=>{
-
-//             console.log(e.querySelector(".songname").innerHTML)
-//             PlayMusic(e.querySelector(".songname").innerHTML.trim())
-//         })
-
-//     })
-
-// }
-
-
-
-// // var audio = new Audio(songs[0]);
-// // audio.play();
-
-// // audio.addEventListener("loadeddata",()=>{
-// //     let duration = audio.duration;
-// //     console.log(duration);
-
-// // })
-
-// main()
-
-
-// Keep only this version of playmusic
-
-
-
-// const playmusic = (track) => {
-//     console.log("Attempting to play:", track);
-
-//     // Use the global currentsong object to avoid multiple songs playing at once
-//     // We use decodeURIComponent first to ensure we don't double-encode the string
-//     currentsong.src = "/songs/" + track; 
-
-//     currentsong.play().catch(e => {
-//         console.error("Playback failed. Check if the file exists in /songs/ folder:", e);
-//         play.src = "playbtn.svg"
-//         document.querySelector(".songinfo").innerHTML = track
-//         document.querySelector(".songtime").innerHTML = "00:00 / 00:00"
-//     });
-// }
-
-// const playmusic = (track) => {
-//     console.log("Attempting to play:", track);
-
-//     currentsong.src = "/songs/" + track;
-
-//     // Set song info and reset time display
-//     document.querySelector(".songinfo").innerHTML = decodeURI(track);
-//     document.querySelector(".songtime").innerHTML = "00:00 / 00:00";
-
-//     currentsong.play().then(() => {
-//         play.src = "pausebtn.svg"; // Change icon to pause when playing
-//     }).catch(e => {
-//         console.error("Playback failed:", e);
-//         play.src = "playbtn.svg";
-//     });
-// }
-
-// --- KEEP YOUR getsongs() AND playmusic() AT THE TOP AS THEY ARE ---
 
 async function main() {
     let songs = await getsongs();
