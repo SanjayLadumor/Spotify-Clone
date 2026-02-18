@@ -355,7 +355,8 @@ nav .Login .Loginbutton:hover {
     /* overflow: hidden; */
     scroll-snap-type: proximity;
     overflow-y: hidden;
-    padding-left: 40px;
+    /* padding-left: 40px; */
+    margin-left: 40px;
     display: flex;
     position: relative;
     transition: all 2s;
@@ -501,8 +502,9 @@ nav .Login .Loginbutton:hover {
 }
 
 .boxes .box2 .artistlist .allartist {
-    padding-left: 40px;
+    /* padding-left: 40px; */
     display: flex;
+    margin-left: 40px;
     overflow-x: scroll;
     padding-bottom: 20px;
 }
@@ -983,4 +985,33 @@ footer .seekbar .musicflex .songinfo {
         width: 50px !important;
         height: 20px;
     }
+}
+
+/* 1. Style the scrollbar for the entire page or specific containers like .lib1 */
+::-webkit-scrollbar {
+    width: 8px;              /* Width of the vertical scrollbar */
+    height: 8px;             /* Height of the horizontal scrollbar (the one you see on mobile) */
+}
+
+/* 2. Style the "Track" (the background area of the scrollbar) */
+::-webkit-scrollbar-track {
+    background: #121212;     /* Dark background to match Spotify's theme */
+    border-radius: 10px;
+}
+
+/* 3. Style the "Thumb" (the actual moving part you grab) */
+::-webkit-scrollbar-thumb {
+    background: #535353;     /* Subtle grey color */
+    border-radius: 10px;     /* Makes it rounded and sleek */
+}
+
+/* 4. Change color when you hover over the scrollbar */
+::-webkit-scrollbar-thumb:hover {
+    background: #1db954;     /* Spotify Green on hover! */
+}
+
+/* 5. For Firefox (Limited styling but keeps it clean) */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #535353 #121212;
 }
