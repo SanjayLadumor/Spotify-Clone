@@ -18,19 +18,18 @@
 // }
 
 async function getsongs() {
+    // 1. Fetch the JSON file you created
     let a = await fetch("songs.json");
-    let songs = await a.json(); // Use .json() instead of .text()
+    let songs = await a.json(); // This gets the array of song names directly
     return songs;
 }
 
 let currentsong = new Audio();
 
-// This is old From Code With Harry
-
 const playmusic = (track) => {
     console.log("Attempting to play:", track);
-    // currentsong.src = "songs.json" + encodeURIComponent(track);
-    currentsong.src = "/songs/" + track;
+    // 2. IMPORTANT: Point to your "songs" folder
+    currentsong.src = "/songs/" + encodeURIComponent(track);
 
     document.querySelector(".songinfo").innerHTML = decodeURI(track);
     document.querySelector(".songtime").innerHTML = "00:00 / 00:00";
@@ -49,18 +48,79 @@ async function main() {
     let songdiv = document.querySelector(".lib1").getElementsByTagName("ul")[0];
     songdiv.innerHTML = "";
 
+    // 3. Updated Loop: No more looking for <a> tags
     for (const song of songs) {
-        let displayName = song.replaceAll("%20", " ");
+        let displayName = song.replace(".mp3", "").replaceAll("%20", " ");
         songdiv.innerHTML += `
-            <ol>
+            <li>
                 <div class="song1here">
                     <img src="greenplayicon.svg" height="45px" width="45px" class="playhere">
                     <img class="songposter" src="poster.jpg" height="150px" width="140px" style="padding: 10px;border-radius: 10px;">
-                    <div class="songname">${displayName}</div>
+                    <div class="songname">${song}</div> 
                     <div class="artistname"></div>
                 </div>
-            </ol>`;
+            </li>`;
     }
+
+    // ... (Keep your artistname and posters logic here) ...
+
+    // Song Click Listener
+    Array.from(document.querySelectorAll(".lib1 li")).forEach(e => {
+        e.addEventListener("click", () => {
+            let songName = e.querySelector(".songname").innerText.trim();
+            playmusic(songName);
+        });
+    });
+
+    // ... (Keep the rest of your play/pause and seekbar listeners) ...
+}
+
+main();
+
+// async function getsongs() {
+//     let a = await fetch("songs.json");
+//     let songs = await a.json(); // Use .json() instead of .text()
+//     return songs;
+// }
+
+// let currentsong = new Audio();
+
+// // This is old From Code With Harry
+
+// const playmusic = (track) => {
+//     console.log("Attempting to play:", track);
+//     // currentsong.src = "songs.json" + encodeURIComponent(track);
+//     currentsong.src = "/songs/" + track;
+
+//     document.querySelector(".songinfo").innerHTML = decodeURI(track);
+//     document.querySelector(".songtime").innerHTML = "00:00 / 00:00";
+
+//     currentsong.play().then(() => {
+//         play.src = "pausebtn.svg";
+//     }).catch(e => {
+//         console.error("Playback failed:", e);
+//         play.src = "playbtn.svg";
+//     });
+// }
+
+// async function main() {
+//     let songs = await getsongs();
+
+//     let songdiv = document.querySelector(".lib1").getElementsByTagName("ul")[0];
+//     songdiv.innerHTML = "";
+
+//     for (const song of songs) {
+//         let displayName = song.replaceAll("%20", " ");
+//         songdiv.innerHTML += `
+//             <ol>
+//                 <div class="song1here">
+//                     <img src="greenplayicon.svg" height="45px" width="45px" class="playhere">
+//                     <img class="songposter" src="poster.jpg" height="150px" width="140px" style="padding: 10px;border-radius: 10px;">
+//                     <div class="songname">${displayName}</div>
+//                     <div class="artistname"></div>
+//                 </div>
+//             </ol>`;
+//     }
 
     let singername = document.querySelectorAll(".artistname");
     if (singername[0]) singername[0].innerText = "Alex Warren";
