@@ -191,11 +191,10 @@
 
 // Function to get the list of songs from JSON
 
-// 1. Global variables
 let currentsong = new Audio();
-let songs = []; 
+let songs = []; // Global list to be used by Next/Previous buttons
 
-// 2. Helper function for time formatting
+// 1. Helper: Time Formatter
 function secondsToMinutesSeconds(seconds) {
     if (isNaN(seconds) || seconds < 0) return "00:00";
     const minutes = Math.floor(seconds / 60);
@@ -203,22 +202,22 @@ function secondsToMinutesSeconds(seconds) {
     return `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
 }
 
-// 3. Fetch songs from JSON
+// 2. Fetch songs from your JSON file
 async function getsongs() {
     try {
         let a = await fetch("songs.json");
         if (!a.ok) throw new Error("songs.json not found");
-        let songData = await a.json(); 
-        return songData;
+        return await a.json(); 
     } catch (error) {
         console.error("Error loading songs:", error);
         return [];
     }
 }
 
-// 4. Play music logic
+// 3. Play music logic
 const playmusic = (track) => {
     console.log("Attempting to play:", track);
+    // Path should be relative to your folder structure
     currentsong.src = "songs/" + track; 
 
     document.querySelector(".songinfo").innerHTML = decodeURI(track).replace(".mp3", "");
@@ -232,34 +231,35 @@ const playmusic = (track) => {
     });
 }
 
-// 5. Main Application Logic
+// 4. Main App Logic
 async function main() {
     songs = await getsongs();
 
+    // Select the <ul> where songs will be listed
     let songUL = document.querySelector(".lib1 ul");
-    if (!songUL) return; // Safety check
+    if (!songUL) {
+        console.error("Could not find <ul> inside .lib1");
+        return;
+    }
     
     songUL.innerHTML = "";
 
+    // Loop through the array from your JSON
     for (const song of songs) {
         songUL.innerHTML += `
             <li class="song-item">
                 <div class="song1here">
                     <img src="greenplayicon.svg" height="45px" width="45px" class="playhere">
-                    <img class="songposter" src="poster.jpg" height="150px" width="140px" style="padding: 10px;border-radius: 10px;">
+                    <img class="songposter" src="poster.jpg" height="150px" width="140px" style="padding: 10px; border-radius: 10px;">
                     <div class="song-details">
                         <div class="songname">${song}</div>
-                        <div class="artistname"></div>
+                        <div class="artistname">Artist</div>
                     </div>
                 </div>
             </li>`;
     }
 
-    // Assign Artist Names & Posters (based on your list)
-    let artists = ["Alex Warren", "Harry Styles", "Djo", "JVKE", "Lana Del Rey", "Lana Del Rey", "Lord Huron", "Ed Sheeran", "Rihanna", "Dr. Dog"];
-    document.querySelectorAll(".artistname").forEach((div, i) => { if(artists[i]) div.innerText = artists[i]; });
-
-    // Click listeners for songs
+    // Assign Click Listeners
     Array.from(document.querySelectorAll(".song-item")).forEach(e => {
         e.addEventListener("click", () => {
             let songName = e.querySelector(".songname").innerText.trim();
@@ -267,14 +267,15 @@ async function main() {
         });
     });
 
-    // Play/Pause Listener
-    document.querySelector("#play").addEventListener("click", () => {
+    // Play/Pause Button
+    let playBtn = document.querySelector("#play");
+    playBtn.addEventListener("click", () => {
         if (currentsong.paused) {
             currentsong.play();
-            document.querySelector("#play").src = "pausebtn.svg";
+            playBtn.src = "pausebtn.svg";
         } else {
             currentsong.pause();
-            document.querySelector("#play").src = "playbtn.svg";
+            playBtn.src = "playbtn.svg";
         }
     });
 
@@ -294,19 +295,12 @@ async function main() {
     });
 }
 
-// 6. Hamburger & Icons
+// 5. Hamburger Logic (Outside main)
 document.querySelectorAll(".hamburger").forEach((button) => {
     button.addEventListener("click", () => {
         document.querySelector(".box1").classList.toggle("active");
     });
 });
 
-const homeiconhover = document.querySelector("nav .homeicon img");
-if (homeiconhover) {
-    homeiconhover.addEventListener("mouseenter", () => {
-        homeiconhover.style.cursor = "pointer";
-    });
-}
-
-// Initialize
+// Start the app
 main();
