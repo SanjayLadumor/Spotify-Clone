@@ -865,7 +865,8 @@ footer .seekbar .musicflex .songinfo {
     }
 
     .boxes .box2 .songslist {
-        padding-left: 10px;
+        /* padding-left: 10px; */
+        margin-left: 15px;
     }
 
     .boxes .box2 .songlib {
@@ -874,6 +875,7 @@ footer .seekbar .musicflex .songinfo {
 
     .boxes .box2 .artistlist .allartist{
         padding-bottom: 5px;
+        margin-left: 15px;
     }
 
     .boxes .box2 .box2footer {
