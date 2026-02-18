@@ -244,7 +244,8 @@ async function main() {
     let singername = document.querySelectorAll(".artistname");
     let artists = ["Alex Warren", "Harry Styles", "Djo", "JVKE", "Lana Del Rey", "Lana Del Rey", "Lord Huron", "Ed Sheeran", "Rihanna", "Dr. Dog"];
     singername.forEach((div, i) => { if(artists[i]) div.innerText = artists[i]; });
-
+    
+let posters = document.querySelectorAll(".songposter");
 if (posters[0]) posters[0].src = "ordiary.jpg";
 if (posters[1]) posters[1].src = "asitwas.jpg";
 if (posters[2]) posters[2].src = "end of beginning.jpg";
