@@ -669,6 +669,10 @@ footer .musicflex .songbtns .pauseplay {
     cursor: pointer;
 }
 
+footer .musicflex .songbtns .next{
+    cursor: pointer;
+}
+
 footer .musicflex .songbtns .nest {
     cursor: pointer;
 }
