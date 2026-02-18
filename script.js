@@ -259,6 +259,31 @@ async function main() {
             </li>`;
     }
 
+let singername = document.querySelectorAll(".artistname");
+if (singername[0]) singername[0].innerText = "Alex Warren";
+if (singername[1]) singername[1].innerText = "Harry Styles";
+if (singername[2]) singername[2].innerText = "Djo";
+if (singername[3]) singername[3].innerText = "JVKE";
+if (singername[4]) singername[4].innerText = "Lana Del Rey";
+if (singername[5]) singername[5].innerText = "Lana Del Rey";
+if (singername[6]) singername[6].innerText = "Lord Huron";
+if (singername[7]) singername[7].innerText = "Ed Sheeran";
+if (singername[8]) singername[8].innerText = "Rihanna";
+if (singername[9]) singername[9].innerText = "Dr. Dog";
+
+let posters = document.querySelectorAll(".songposter");
+
+if (posters[0]) posters[0].src = "ordiary.jpg";
+if (posters[1]) posters[1].src = "asitwas.jpg";
+if (posters[2]) posters[2].src = "end of beginning.jpg";
+if (posters[3]) posters[3].src = "her.jpg";
+if (posters[4]) posters[4].src = "poster.jpg";
+if (posters[5]) posters[5].src = "youngandbeautiful.jpg";
+if (posters[6]) posters[6].src = "nightwemet.jpg";
+if (posters[7]) posters[7].src = "perfect.jpg";
+if (posters[8]) posters[8].src = "liftmeup.jpg";
+if (posters[9]) posters[9].src = "whereallthetimego.jpg";
+
     // Assign Click Listeners
     Array.from(document.querySelectorAll(".song-item")).forEach(e => {
         e.addEventListener("click", () => {
